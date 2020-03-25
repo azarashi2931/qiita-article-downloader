@@ -40,7 +40,7 @@ def downloadmarkdownpage(url, path):
 
 if __name__ == "__main__":
     # help menu
-    if sys.argv[1] == '-h':
+    if len(sys.argv) == 2 and sys.argv[1] == '-h':
         print('Input $ main.py URL path')
         exit()
 
