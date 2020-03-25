@@ -18,22 +18,7 @@ def getfile(s):
 def replaceimageblock(text, url, path):
     return text.replace(url, path)
 
-if __name__ == "__main__":
-    # help menu
-    if sys.argv[1] == '-h':
-        print('Input $ main.py URL path')
-        exit()
-
-    # Arguments check
-    if len(sys.argv) != 3:
-        print('Argument error')
-        exit()
-
-    #--------------------------
-    # read arguments
-    url = sys.argv[1]
-    path = sys.argv[2]
-
+def downloadmarkdownpage(url, path):   
     # download .md
     download(url, path)
 
@@ -51,3 +36,26 @@ if __name__ == "__main__":
             text = replaceimageblock(text, imageurl, imagetitle)
         # uodate file
         file.write(text)
+
+
+if __name__ == "__main__":
+    # help menu
+    if sys.argv[1] == '-h':
+        print('Input $ main.py URL path')
+        exit()
+
+    # Arguments check
+    if len(sys.argv) != 3:
+        print('Argument error')
+        exit()
+
+    
+    #--------------------------
+    # main
+    #--------------------------
+    
+    # read arguments
+    url = sys.argv[1]
+    path = sys.argv[2]
+
+    downloadmarkdownpage(url, path)
